@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_templateListFragment"
+            app:destination="@id/templateListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_spreadListFragment"
+            app:destination="@id/spreadListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/templateListFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.TemplateListFragment"
+        android:label="fragment_template_list"
+        tools:layout="@layout/fragment_template_list" >
+        <action
+            android:id="@+id/action_templateListFragment_to_templateFragment"
+            app:destination="@id/templateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/templateFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.TemplateFragment"
+        android:label="fragment_template"
+        tools:layout="@layout/fragment_template" >
+        <argument
+            android:name="file"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_templateFragment_to_templateListFragment"
+            app:destination="@id/templateListFragment"
+            app:popUpTo="@id/templateListFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="isNew"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/spreadListFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.SpreadListFragment"
+        android:label="SpreadListFragment" >
+        <action
+            android:id="@+id/action_spreadListFragment_to_spreadFragment"
+            app:destination="@id/spreadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spreadFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.SpreadFragment"
+        android:label="SpreadFragment" >
+        <action
+            android:id="@+id/action_spreadFragment_to_spreadListFragment"
+            app:destination="@id/spreadListFragment"
+            app:popUpTo="@id/spreadListFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="fileName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_spreadFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.AddItemFragment"
+        android:label="AddItemFragment" >
+        <action
+            android:id="@+id/action_addItemFragment_to_spreadFragment"
+            app:destination="@id/spreadFragment"
+            app:popUpTo="@id/spreadFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="fileName"
+            app:argType="string" />
+        <argument
+            android:name="isNew"
+            app:argType="boolean" />
+        <argument
+            android:name="barcode"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.haikalzain.inventorypro.ui.fragment.AboutFragment"
+        android:label="AboutFragment" />
+</navigation>

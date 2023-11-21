@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">InventoryScan Pro</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_templates">TemplatesActivity</string>
+    <string name="title_activity_sheet">SheetActivity</string>
+    <string name="title_activity_new_template">NewTemplateActivity</string>
+    <string name="title_activity_spreadsheet">SpreadsheetActivity</string>
+    <string name="title_activity_new_item">NewItemActivity</string>
+    <string name="title_activity_filter">FilterActivity</string>
+    <string name="title_activity_scan">Barcode Scanner</string>
+    <string name="title_activity_sync">Dropbox Sync</string>
+    <string name="sync_folder_pref_key">SYNC_FOLDER</string>
+    <string name="sync_import_text">Navigate to your Dropbox folder(above) on your PC.
+        Drag and drop spreadsheets into the folder "spreadsheets" and templates into the folder
+        "templates".</string>
+    <string name="sync_backup_text">If sync is enabled, any spreadsheets or templates you create/edit/scan
+    will automatically be synced to the cloud. If you have Dropbox installed on your PC, you will also receive real-time notifications
+    as you update your spreadsheets/templates.</string>
+    <string name="about_text">InventoryScan Pro and InventoryScan Free are copyright Dribble Apps. If you liked InventoryScan Free, please consider upgrading
+     to InventoryScan Pro to support the developers.
+     </string>
+    <string name="credits_text">We\'d
+    like to acknowledge the following companies/individuals for making this app possible:
+    Google - for the Android OS, Amazon - for the App Store, dm77 and zbar for their barcodescanner library released
+    under the Apache License 2.0 and jExcelApi by Andy Khan released under the LGPL license.
+    The Apache License is available here: http://www.apache.org/licenses/LICENSE-2.0. The LGPL License is available here: https://www.gnu.org/licenses/lgpl.html.</string>
+    <string name="title_activity_about">About</string>
+    <string name="support_text">If you are having trouble with the app, wish to report bugs or make feature requests please email our support at dribbleau@gmail.com. We will reply as soon as possible.</string>
+
+
+    <string name="dropbox_app_key">dropbox_app_key</string>
+    <string name="dropbox_app_secret">dropbox_app_secret</string>
+
+
+    <!-- Inventory Activity strings -->
+    <string name="delete_instructions">Press and hold file for more options</string>
+    <string name="title_spreadsheets">Spreadsheets</string>
+    <string name="title_templates">Spreadsheet Templates</string>
+    <string name="dialog_options_open">Open</string>
+    <string name="dialog_options_share">Share</string>
+    <string name="dialog_options_delete">Delete</string>
+    <string name="button_add_field">Add Field…</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_done">Done</string>
+    <string name="more_options_dialog_title">Options</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
