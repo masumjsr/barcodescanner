@@ -2,8 +2,6 @@ package com.haikalzain.inventorypro
 
 import android.app.Application
 import android.util.Log
-import com.haikalzain.inventorypro.common.Item
-import com.haikalzain.inventorypro.common.Spreadsheet
 import com.haikalzain.inventorypro.di.appModule
 import com.haikalzain.inventorypro.utils.FileUtils
 import org.koin.android.ext.koin.androidContext
@@ -18,12 +16,6 @@ import java.io.OutputStream
  * Created by haikalzain on 7/01/15.
  */
 class App : Application() {
-    @JvmField
-    var currentSpreadsheet: Spreadsheet? = null
-    @JvmField
-    var currentExcelFile: File? = null
-    @JvmField
-    var currentItem: Item? = null
     override fun onCreate() {
         super.onCreate()
 
@@ -35,12 +27,16 @@ class App : Application() {
 
 
         val templatesDirectory = FileUtils.getTemplatesDirectory(this)
-        if (!templatesDirectory.exists()) {
-            val success = templatesDirectory.mkdir()
+        if (templatesDirectory != null) {
+            if (!templatesDirectory.exists()) {
+                templatesDirectory.mkdir()
+            }
         }
         val spreadsheetsDirectory = FileUtils.getSpreadsheetsDirectory(this)
-        if (!spreadsheetsDirectory.exists()) {
-            spreadsheetsDirectory.mkdir()
+        if (spreadsheetsDirectory != null) {
+            if (!spreadsheetsDirectory.exists()) {
+                spreadsheetsDirectory.mkdir()
+            }
         }
 
         // Copy in spreadsheets and templates if empty
@@ -59,7 +55,7 @@ class App : Application() {
                     `in`.close()
                     out.close()
                 }
-            } catch (e: IOException) {
+            } catch (_: IOException) {
             }
         }
         if (FileUtils.getTemplateFiles(this).isEmpty()) {
@@ -75,7 +71,7 @@ class App : Application() {
                     `in`.close()
                     out.close()
                 }
-            } catch (e: IOException) {
+            } catch (_: IOException) {
             }
         }
     }
